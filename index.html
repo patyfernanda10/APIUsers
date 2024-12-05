@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário</title>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<div class="layout">
+    <nav class="menu-lateral">
+        <h2>Menu</h2>
+        <ul>
+           
+            <li> <a href="#" id="menu-criar-usuario">Criar Usuário</a></li>
+            <li><a href="#" id="menu-listar-usuarios">Gerenciar Usuários</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Sair</a></li>
+        </ul>
+     </nav>
+
+     <div class="conteudo">  
+        <div class="card-carro">
+            <img src="https://legado.autoforce.com.br/assets/ddm/images/fiat-pulse/versoes/Pulse_1.3_MT_Com_sombra.png" alt="Carro Fiat" class="imagem-carro">
+            <div class="detalhes-carro">
+                <h3>Fiat Pulse</h3>
+                <p>O novo Fiat Pulse, com design robusto e inovador, pensado para quem busca potência e estilo.</p>
+            </div>
+        </div>
+
+        <div id="gerenciamento-usuarios">
+            <h2>Usuários Cadastrados</h2>
+            <div class="usuarios-lista" id="usuarios-lista"></div>
+       
+<!-- Formulário de Criação -->
+<div>
+    <form name="formulario1" id="formulario1" style="display: none;" onsubmit="submitForm(event)">
+        <div class="input-group">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" required><br>
+        </div>
+        
+        <div class="input-group">
+            <label for="age">Idade:</label>
+            <input type="text" id="age" required><br>
+        </div>
+        <button type="submit" class="btn-cadastrar">Cadastrar</button>
+    </form>
+</div>
+
+<!-- Formulário de Edição -->
+<div id="formulario-edicao" style="display: none;">
+    <form name="form-edicao" id="form-edicao" onsubmit="atualizarUsuario(event)">
+        <div class="input-group">
+            <label for="edit-name">Nome:</label>
+            <input type="text" id="edit-name" name="name">
+        </div>
+        
+        <div class="input-group">
+            <label for="edit-age">Idade:</label>
+            <input type="text" id="edit-age" name="age">
+        </div>
+        <input type="hidden" id="edit-id" name="id">
+        <button type="submit" class="btn-cadastrar">Cadastrar</button>
+    </form>
+</div>
+
+
+<script src="Javascript/crud.js"></script>
+<script src="Javascript/usuario.js"></script>
+
+</body>
+</html>
